@@ -1,0 +1,7 @@
+.delete-btn {
+  width: 30px;
+  height: 30px;
+  background: url(../images/delete.png);
+  background-size: 30px;
+  cursor: pointer;
+}

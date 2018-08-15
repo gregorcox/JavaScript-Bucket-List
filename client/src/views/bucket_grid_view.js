@@ -14,8 +14,10 @@ BucketsView.prototype.bindEvents = function () {
 
 BucketsView.prototype.render = function (items) {
   this.container.innerHTML = '';
-  const bucketView = new BucketView(this.container);
-  items.forEach((item) => bucketView.render(item));
+  items.forEach((item) => {
+    const bucketView = new BucketView(this.container, item);
+    bucketView.render();
+  })
 };
 
 

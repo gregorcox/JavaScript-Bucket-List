@@ -3,6 +3,7 @@ db.dropDatabase();
 
 db.items.insertMany([
   {
-    name: "skydive"
+    name: "skydive",
+    completed: false
   }
 ])
