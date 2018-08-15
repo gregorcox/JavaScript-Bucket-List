@@ -20,7 +20,7 @@ BucketView.prototype.render = function (item) {
 
 BucketView.prototype.createHeading = function (textContent) {
   const heading = document.createElement('h5');
-  heading.textContent(textContent);
+  heading.textContent = textContent;
   return heading;
 };
 

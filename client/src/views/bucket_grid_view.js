@@ -6,8 +6,9 @@ const BucketsView = function (container) {
 }
 
 BucketsView.prototype.bindEvents = function () {
-  PubSub.subscribe('Item:data-loaded', (evt) => {
+  PubSub.subscribe('Items:data-loaded', (evt) => {
     this.render(evt.detail);
+    console.log(evt.detail);
   });
 };
 
