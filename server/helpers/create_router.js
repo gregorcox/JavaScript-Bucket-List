@@ -50,6 +50,25 @@ const createRouter = function (collection) {
     })
   });
 
+  //UPDAte
+  router.put('/:id', (req,res) => {
+    const id = req.params.id;
+    const updatedData = req.body
+    collection.updateOne(
+      {_id: ObjectId(id)},
+      {$set:updatedData }
+    )
+    .then(() =>{
+      return collection.find().toArray()
+    })
+    .then((docs) =>{
+      res.json(docs);
+    })
+    .catch((err) =>{
+      console.error(err);
+    })
+  });
+
 return router;
 
 
