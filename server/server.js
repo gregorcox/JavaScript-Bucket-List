@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const parser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
-const CreateRouter = require('./helpers/create_router.js');
+const createRouter = require('./helpers/create_router.js');
 const path = require('path');
 
 
@@ -14,7 +14,7 @@ MongoClient.connect('mongodb://localhost:27017')
 .then((client) =>{
   const db = client.db('bucket_list');
   const bucketCollection = db.collection('items');
-  const bucketRouter = CreateRouter(bucketCollection);
+  const bucketRouter = createRouter(bucketCollection);
   app.use('/api/bucketlist', bucketRouter);
 })
 .catch(console.err);
