@@ -6,9 +6,14 @@ const createRouter = function (collection) {
 
 
   //INDEX
-  router.get('/', (req,res)=>{
+  router.get('/', (req, res) => {
     collection.find().toArray()
-    .then((docs) => res.json(docs))
+    .then((docs) => {
+      res.json(docs);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
   });
 
   //SHOW
@@ -23,6 +28,9 @@ const createRouter = function (collection) {
     });
   });
 
+return router;
 
 
 }
+
+module.exports = createRouter;
