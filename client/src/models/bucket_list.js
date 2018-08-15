@@ -40,3 +40,5 @@ BucketList.prototype.deleteItem = function (itemId) {
   })
   .catch(console.error);;
 };
+
+module.exports = BucketList;
